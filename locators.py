@@ -3,7 +3,7 @@ class ImportantQuestionsLocators:
     how_much_does_it_cost = [By.ID,'accordion__heading-0']
     how_much_does_it_cost_is_open = [By.ID, 'accordion__panel - 0']
     i_want_some_scooters = [By.ID, 'accordion__heading-1']
-    i_want_some_scooters_is_open = [By.ID, 'accordion__panel-1']
+    i_want_some_scooters_is_open = [By.ID, 'accordion__panel-1 ']
     how_is_the_rental_time_calculated = [By.ID, 'accordion__heading-2']
     how_is_the_rental_time_calculated_is_open = [By.ID, 'accordion__panel-2']
     can_i_order_a_scooter_for_today = [By.ID, 'accordion__heading-3']

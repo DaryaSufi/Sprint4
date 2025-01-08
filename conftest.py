@@ -6,10 +6,8 @@ from constants import Constants
 def driver(request):
     if request.param == 'firefox':
         browser = webdriver.Firefox()
-        browser.get(Constants.URL)
     elif request.param == 'chrome':
-        browser =  webdriver.Chrome()
-        browser.get(Constants.URL)
+        browser=  webdriver.Chrome()
     else:
         raise ValueError('Unknown browser type')
     yield browser

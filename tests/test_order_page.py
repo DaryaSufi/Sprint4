@@ -1,14 +1,16 @@
-from pages.locators import OrderPageLocators
+import allure
+
+from locators import OrderPageLocators
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from selenium import webdriver
 from conftest import driver
 from constants import Constants
-import allure
+
 
 class TestOrderPage:
 
+    @allure.step
     def tets_place_an_order(self,driver):
         driver.find_element(OrderPageLocators.the_order_button_at_the_top_of_the_page).click()
         WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located)
@@ -34,7 +36,8 @@ class TestOrderPage:
         driver.find_element(OrderPageLocators.yandex_logo).click()
         assert driver.current_url == Constants.URL_DZEN
 
-    def place_an_order_other_data(self):
+    @allure.step
+    def test_place_an_order_other_data(self):
         self.driver.find_element(OrderPageLocators.the_order_button_at_the_bottom_of_the_page).click()
         WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located)
         self.driver.find_element(OrderPageLocators.name_input_field).send_key(Constants.NAME2)
