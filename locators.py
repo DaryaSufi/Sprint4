@@ -38,5 +38,9 @@ class OrderPageLocators:
     view_the_status = [By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM']"]
     scooter_logo = [By.XPATH, "//img[@src='/assets/scooter.svg']"]
     yandex_logo = [By.XPATH,"//img[@src='/assets/ya.svg']"]
+    metro_sokoiniki = [By.XPATH, ".//*[text() = 'Сокольники']"]
+    dvoe_sutok  = [By.XPATH, ".//*[text() = 'Двое суток']"]
+    metro_lybanka = [By.XPATH, ".//*[text() = 'Лубянка']"]
+    troe_sutok  = [By.XPATH, ".//*[text() = 'Трое суток']"]
 
 
