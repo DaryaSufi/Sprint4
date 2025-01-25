@@ -9,18 +9,6 @@ class ImportantQuestions(BasePage):
     def __init__(self,driver):
         self.driver=driver
 
-    @pytest.mark.parametrize('line_name', [ImportantQuestionsLocators.how_much_does_it_cost,
-                                           ImportantQuestionsLocators.i_want_some_scooters,
-                                           ImportantQuestionsLocators.how_is_the_rental_time_calculated,
-                                           ImportantQuestionsLocators.can_i_order_a_scooter_for_today,
-                                           ImportantQuestionsLocators.is_it_possible_to_extend_the_order,
-                                           ImportantQuestionsLocators.do_you_bring_charger,
-                                           ImportantQuestionsLocators.is_it_possible_to_cancel_an_order,
-                                           ImportantQuestionsLocators.i_live_beyond_the_MKAD])
-    @allure.step('Кликаем по строке')
-    def click_important_questions_line(self,line_name):
-        self.driver.find_element(line_name).click()
-
     @allure.step('Кликаем по строке Сколько это стоит')
     def click_how_much_does_it_cost(self):
         self.driver.find_element(ImportantQuestionsLocators.how_much_does_it_cost).click()

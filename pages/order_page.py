@@ -12,7 +12,7 @@ from pages.base_page import BasePage
 class OrderPage(BasePage):
     def __init__(self,driver):
         self.driver = driver
-    @allure.step
+    @allure.step('Проверяем заказ самоката с 1-м набором данных')
     def place_an_order(self):
         self.driver.find_element(OrderPageLocators.the_order_button_at_the_top_of_the_page).click()
         WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located)
@@ -32,7 +32,7 @@ class OrderPage(BasePage):
         self.driver.find_element(OrderPageLocators.the_order_button_in_the_order_form).click()
         self.driver.find_element(OrderPageLocators.yes_button).click()
 
-    @allure.step
+    @allure.step('Проверяем заказ самоката со 2-м набором данных')
     def place_an_order_other_data(self):
         self.driver.find_element(OrderPageLocators.the_order_button_at_the_bottom_of_the_page).click()
         WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located)
@@ -51,6 +51,18 @@ class OrderPage(BasePage):
         self.driver.find_element(OrderPageLocators.comment_for_the_courier).send_key(Constants.COMMENT2)
         self.driver.find_element(OrderPageLocators.the_order_button_in_the_order_form).click()
         self.driver.find_element(OrderPageLocators.yes_button).click()
+
+    @allure.step('Проверяем, что при нажатии на логотип «Самоката», попадаем на главную страницу «Самоката».')
+    def logo_samokat_click(self):
+        self.driver.find_element(OrderPageLocators.view_the_status).click()
+        self.driver.find_element(OrderPageLocators.scooter_logo).click()
+
+    @allure.step('Проверить: если нажать на логотип Яндекса, в новом окне через редирект откроется главная страница Дзена.')
+    def logo_yandex_click(self):
+        self.driver.find_element(OrderPageLocators.yandex_logo).click()
+
+
+
 
 
 
