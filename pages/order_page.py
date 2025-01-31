@@ -2,55 +2,41 @@ import allure
 
 from locators import OrderPageLocators
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from conftest import driver
-from constants import Constants
 from pages.base_page import BasePage
 
-
 class OrderPage(BasePage):
-    def __init__(self,driver):
+    def __init__(self, driver):
+        super().__init__(driver)
         self.driver = driver
-    @allure.step('Проверяем заказ самоката с 1-м набором данных')
-    def place_an_order(self):
+    @allure.step('Открываем форму для заказа по кнопке вверху страницы')
+    def open_form_for_order(self):
         self.driver.find_element(OrderPageLocators.the_order_button_at_the_top_of_the_page).click()
-        WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located)
-        self.driver.find_element(OrderPageLocators.name_input_field).send_key(Constants.NAME1)
-        self.driver.find_element(OrderPageLocators.last_name_input_field).send_key(Constants.SURNAME1)
-        self.driver.find_element(OrderPageLocators.address_input_field).send_key(Constants.ADDRESS1)
-        self.driver.find_element(OrderPageLocators.metro_station).click()
-        self.driver.find_element(OrderPageLocators.metro_sokoiniki).click()
-        self.driver.find_element(OrderPageLocators.phone_input_field).send_key(Constants.PHONE1)
-        self.driver.find_element(OrderPageLocators.the_next_button).click()
-        WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located)
-        self.driver.find_element(OrderPageLocators.when_to_bring_the_scooter).send_key(Constants.DATA1)
-        self.driver.find_element(OrderPageLocators.rental_period).click()
-        self.driver.find_element(OrderPageLocators.dvoe_sutok).click()
-        self.driver.find_element(OrderPageLocators.checkbox_blak).click()
-        self.driver.find_element(OrderPageLocators.comment_for_the_courier).send_key(Constants.COMMENT1)
-        self.driver.find_element(OrderPageLocators.the_order_button_in_the_order_form).click()
-        self.driver.find_element(OrderPageLocators.yes_button).click()
 
-    @allure.step('Проверяем заказ самоката со 2-м набором данных')
-    def place_an_order_other_data(self):
-        self.driver.find_element(OrderPageLocators.the_order_button_at_the_bottom_of_the_page).click()
-        WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located)
-        self.driver.find_element(OrderPageLocators.name_input_field).send_key(Constants.NAME2)
-        self.driver.find_element(OrderPageLocators.last_name_input_field).send_key(Constants.SURNAME2)
-        self.driver.find_element(OrderPageLocators.address_input_field).send_key(Constants.ADDRESS2)
+    @allure.step('Заполняем форму Для кого самокат и нажимаем Далее')
+    def fill_for_who_form(self,name, sure_name, address_name,metro_name_locator,phone_number):
+        WebDriverWait(self.driver, 3).until(EC.presence_of_all_elements_located(OrderPageLocators.name_input_field))
+        self.fill_form(OrderPageLocators.name_input_field, name)
+        self.fill_form(OrderPageLocators.last_name_input_field, sure_name)
+        self.fill_form(OrderPageLocators.address_input_field, address_name)
         self.driver.find_element(OrderPageLocators.metro_station).click()
-        self.driver.find_element(OrderPageLocators.metro_lybanka).click()
-        self.driver.find_element(OrderPageLocators.phone_input_field).send_key(Constants.PHONE2)
+        self.driver.find_element(metro_name_locator).click()
+        self.fill_form(OrderPageLocators.phone_input_field, phone_number)
         self.driver.find_element(OrderPageLocators.the_next_button).click()
-        WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located)
-        self.driver.find_element(OrderPageLocators.when_to_bring_the_scooter).send_key(Constants.DATA2)
-        self.driver.find_element(OrderPageLocators.rental_period).click()
-        self.driver.find_element(OrderPageLocators.troe_sutok).click()
-        self.driver.find_element(OrderPageLocators.checkbox_blak).click()
-        self.driver.find_element(OrderPageLocators.comment_for_the_courier).send_key(Constants.COMMENT2)
-        self.driver.find_element(OrderPageLocators.the_order_button_in_the_order_form).click()
-        self.driver.find_element(OrderPageLocators.yes_button).click()
+
+    @allure.step('Заполняем форму Про аренду и нажимаем кнопок Заказать и Да')
+    def fill_form_about_rent(self, when_to_bring_the_scooter, rental_period_locator, checkbox_locator, comment ):
+         self.fill_form(OrderPageLocators.when_to_bring_the_scooter, when_to_bring_the_scooter)
+         self.driver.find_element(OrderPageLocators.rental_period).click()
+         self.driver.find_element(rental_period_locator).click()
+         self.driver.find_element(checkbox_locator).click()
+         self.fill_form(OrderPageLocators.comment_for_the_courier,comment)
+         self.driver.find_element(OrderPageLocators.the_order_button_in_the_order_form).click()
+         self.driver.find_element(OrderPageLocators.yes_button).click()
+
+    @allure.step('Открываем форму для заказа по кнопке внизу страницы')
+    def open_form_oredr_the_order_button_at_the_bottom_of_the_page(self):
+        self.driver.find_element(OrderPageLocators.the_order_button_at_the_bottom_of_the_page).click()
 
     @allure.step('Проверяем, что при нажатии на логотип «Самоката», попадаем на главную страницу «Самоката».')
     def logo_samokat_click(self):
@@ -60,6 +46,7 @@ class OrderPage(BasePage):
     @allure.step('Проверить: если нажать на логотип Яндекса, в новом окне через редирект откроется главная страница Дзена.')
     def logo_yandex_click(self):
         self.driver.find_element(OrderPageLocators.yandex_logo).click()
+
 
 
 
