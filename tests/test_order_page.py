@@ -18,11 +18,9 @@ class TestOrderPage:
     @pytest.mark.parametrize('data', [
         (
                 {'name': 'Федор', 'sure_name': 'Федоров', 'address_name': 'ул.Пятницкая, д.35', 'metro_name_locator': 'OrderPageLocators.metro_sokoiniki', 'phone_number': '89607667147'},
-
         ),
         (
-                {'name': 'Петр', 'sure_name': 'Петров', 'address_name': 'ул.Остоженка, д.49', 'metro_name_locator': 'OrderPageLocators.metro_lybanka', 'phone_number': '89628778158'},
-
+                {'name': 'Петр', 'sure_name': 'Петров', 'address_name': 'ул.Остоженка, д.49', 'metro_name_locator': 'OrderPageLocators.metro_lybanka', 'phone_number': '89628778158'}
         )
     ])
     @allure.title('Проверяем заполнение формы Для кого самокат и нажатие кнопки Далее')
@@ -34,11 +32,9 @@ class TestOrderPage:
     @pytest.mark.parametrize('data_1', [
         (
                 {'when_to_bring_the_scooter': '05.01.2025', 'rental_period_locator': 'OrderPageLocators.dvoe_sutok', 'checkbox_locator': 'OrderPageLocators.checkbox_blak', 'comment': 'Коментарий 1'},
-
         ),
         (
-                {'when_to_bring_the_scooter': '06.01.2025', 'rental_period_locator': 'OrderPageLocators.troe_sutok', 'checkbox_locator': 'OrderPageLocators.checkbox_grey', 'comment': 'Коментарий 2'},
-
+                {'when_to_bring_the_scooter': '06.01.2025', 'rental_period_locator': 'OrderPageLocators.troe_sutok', 'checkbox_locator': 'OrderPageLocators.checkbox_grey', 'comment': 'Коментарий 2'}
         )
     ])
     @allure.title('Проверяем заполнеение формы Про аренду и нажатие кнопок Заказать и Да')
