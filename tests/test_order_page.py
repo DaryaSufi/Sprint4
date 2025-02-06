@@ -24,9 +24,9 @@ class TestOrderPage:
         )
     ])
     @allure.title('Проверяем заполнение формы Для кого самокат и нажатие кнопки Далее')
-    def test_fill_for_who_form(self,driver,data):
+    def test_fill_for_who_form(self, driver, data):
         order_page = OrderPage(driver)
-        order_page.fill_for_who_form(data['name'], data['sure_name'], data['adress_name'], data['metro_name_locator'], data['phone_number'])
+        order_page.fill_for_who_form(data['name'], data['sure_name'], data['address_name'], data['metro_name_locator'], data['phone_number'])
         assert order_page.find_element(OrderPageLocators.when_to_bring_the_scooter)
 
     @pytest.mark.parametrize('data_1', [

@@ -38,5 +38,5 @@ class ImportantQuestions(BasePage):
         self.driver.find_element(ImportantQuestionsLocators.is_it_possible_to_cancel_an_order).click()
 
     @allure.step('Кликаем по строке Я жизу за МКАДом, привезёте?')
-    def click_i_live_beyond_the_mkad(self):
+    def click_i_live_beyond_the_MKAD(self):
         self.driver.find_element(ImportantQuestionsLocators.i_live_beyond_the_MKAD).click()
