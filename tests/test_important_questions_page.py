@@ -3,7 +3,6 @@ import pytest
 
 from locators import ImportantQuestionsLocators
 from pages.important_questions_page import ImportantQuestions
-from conftest import driver
 
 
 class TestImportantQuestions:

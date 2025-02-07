@@ -61,7 +61,7 @@ class TestOrderPage:
         order_page = OrderPage(driver)
         order_page.go_to_site()
         order_page.logo_samokat_click()
-        assert order_page.current_url == Constants.URL
+        assert driver.current_url == Constants.URL
 
     @allure.title("Проверка клика по логотипу яндекс")
 

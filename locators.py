@@ -1,21 +1,21 @@
 from selenium.webdriver.common.by import By
 class ImportantQuestionsLocators:
-    how_much_does_it_cost = [By.ID, 'accordion__heading-0']
-    how_much_does_it_cost_is_open = [By.ID, 'accordion__panel-0']
-    i_want_some_scooters = [By.ID, 'accordion__heading-1']
-    i_want_some_scooters_is_open = [By.ID, 'accordion__panel-1']
-    how_is_the_rental_time_calculated = [By.ID, 'accordion__heading-2']
-    how_is_the_rental_time_calculated_is_open = [By.ID, 'accordion__panel-2']
-    can_i_order_a_scooter_for_today = [By.ID, 'accordion__heading-3']
-    can_i_order_a_scooter_for_today_is_open = [By.ID, 'accordion__panel-3']
-    is_it_possible_to_extend_the_order = [By.ID, 'accordion__heading-4']
-    is_it_possible_to_extend_the_order_is_open = [By.ID, 'accordion__panel-4']
-    do_you_bring_charger = [By.ID, 'accordion__heading-5']
-    do_you_bring_charger_is_open = [By.ID, 'accordion__panel-5']
-    is_it_possible_to_cancel_an_order = [By.ID, 'accordion__heading-6']
-    is_it_possible_to_cancel_an_order_is_open = [By.ID, 'accordion__panel-6']
-    i_live_beyond_the_MKAD = [By.ID, 'accordion__heading-7']
-    i_live_beyond_the_MKAD_is_open = [By.ID, 'accordion__panel-7']
+    how_much_does_it_cost = [By.XPATH, '//div[@id="accordion__heading-0"]/parent::div']
+    how_much_does_it_cost_is_open = (By.XPATH, '//div[@id="accordion__panel-0"]')
+    i_want_some_scooters = [By.XPATH, '//div[@id="accordion__heading-1"]/parent::div']
+    i_want_some_scooters_is_open = (By.XPATH, '//div[@id="accordion__panel-1"]')
+    how_is_the_rental_time_calculated = [By.XPATH, '//div[@id="accordion__heading-2"]/parent::div']
+    how_is_the_rental_time_calculated_is_open = (By.XPATH, '//div[@id="accordion__panel-2"]')
+    can_i_order_a_scooter_for_today = [By.XPATH, '//div[@id="accordion__heading-3"]/parent::div']
+    can_i_order_a_scooter_for_today_is_open = (By.XPATH, '//div[@id="accordion__panel-3"]')
+    is_it_possible_to_extend_the_order = [By.XPATH, '//div[@id="accordion__heading-4"]/parent::div']
+    is_it_possible_to_extend_the_order_is_open = (By.XPATH, '//div[@id="accordion__panel-4"]')
+    do_you_bring_charger = [By.XPATH, '//div[@id="accordion__heading-5"]/parent::div']
+    do_you_bring_charger_is_open = (By.XPATH, '//div[@id="accordion__panel-5"]')
+    is_it_possible_to_cancel_an_order = [By.XPATH, '//div[@id="accordion__heading-6"]/parent::div']
+    is_it_possible_to_cancel_an_order_is_open = (By.XPATH, '//div[@id="accordion__panel-6"]')
+    i_live_beyond_the_MKAD = [By.XPATH, '//div[@id="accordion__heading-7"]/parent::div']
+    i_live_beyond_the_MKAD_is_open = (By.XPATH, '//div[@id="accordion__panel-7"]')
 
 class OrderPageLocators:
     the_order_button_at_the_top_of_the_page = [By.XPATH,"//button[@class='Button_Button__ra12g']"]
@@ -39,7 +39,6 @@ class OrderPageLocators:
     scooter_logo = [By.XPATH, "//img[@src='/assets/scooter.svg']"]
     yandex_logo = [By.XPATH,"//img[@src='/assets/ya.svg']"]
     metro_sokolniki = [By.XPATH, "//div[text()='Сокольники']"]
-    metro_lubyanka = [By.XPATH, "//div[text()='Лубянка']"]
     dvoe_sutok  = [By.XPATH, ".//*[text() = 'Двое суток']"]
     metro_lubyanka = [By.XPATH, "//div[text()='Лубянка']"]
     troe_sutok  = [By.XPATH, ".//*[text() = 'Трое суток']"]

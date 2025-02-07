@@ -1,11 +1,11 @@
 import allure
-import pytest
 from locators import ImportantQuestionsLocators
 from pages.base_page import BasePage
 
 
 class ImportantQuestions(BasePage):
-    def __init__(self,driver):
+    def __init__(self, driver):
+        super().__init__(driver)
         self.driver=driver
 
     @allure.step('Кликаем по строке Сколько это стоит')
@@ -39,11 +39,6 @@ class ImportantQuestions(BasePage):
     @allure.step('Кликаем по строке Я жизу за МКАДом, привезёте?')
     def click_i_live_beyond_the_mkad(self):
         self.driver.find_element(ImportantQuestionsLocators.i_live_beyond_the_MKAD).click()
-
-
-class ImportantQuestions(BasePage):
-    def __init__(self,driver):
-        self.driver=driver
 
     @allure.step('Кликаем по строке Сколько это стоит')
     def click_how_much_does_it_cost(self):
