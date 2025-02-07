@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 class ImportantQuestionsLocators:
-    how_much_does_it_cost = [By.ID,'accordion__heading-0']
+    how_much_does_it_cost = [By.ID, 'accordion__heading-0']
     how_much_does_it_cost_is_open = [By.ID, 'accordion__panel-0']
     i_want_some_scooters = [By.ID, 'accordion__heading-1']
     i_want_some_scooters_is_open = [By.ID, 'accordion__panel-1']
@@ -20,9 +20,8 @@ class ImportantQuestionsLocators:
 class OrderPageLocators:
     the_order_button_at_the_top_of_the_page = [By.XPATH,"//button[@class='Button_Button__ra12g']"]
     the_order_button_at_the_bottom_of_the_page = [By.XPATH,"//button[@class='Button_Button__ra12g Button_Middle__1CSJM']"]
-    order_registration_form = [By.XPATH,"//div[@class ='Order_Header__BZXOb']"]
-    name_input_field = [By.XPATH,"//input[@class='Input_Input__1iN_Z Input_Error__1Tx5d Input_Responsible__1jDKN']"]
-    last_name_input_field = [By.XPATH,"//input[@class='Input_Input__1iN_Z Input_Filled__1rDxs Input_Responsible__1jDKN']"]
+    name_input_field = [By.XPATH, "//input[@placeholder='* Имя']"]
+    last_name_input_field = [By.XPATH, "//input[@placeholder='* Фамилия']"]
     address_input_field = [By.XPATH,"//input[@class ='Input_Input__1iN_Z Input_Responsible__1jDKN' and @placeholder='* Адрес: куда привезти заказ']"]
     metro_station = [By.XPATH, "//input[@class ='select-search__input']"]
     phone_input_field = [By.XPATH, "//input[@class ='Input_Input__1iN_Z Input_Responsible__1jDKN' and @placeholder='* Телефон: на него позвонит курьер']"]
@@ -32,16 +31,15 @@ class OrderPageLocators:
     scooter_color = [By.XPATH, "//div[@class ='Order_Title__3EKne']"]
     comment_for_the_courier = [By.XPATH, "//input[@class ='Input_Input__1iN_Z Input_Responsible__1jDKN react-datepicker-ignore-onclickoutside' and @placeholder='Комментарий для курьера']"]
     the_order_button_in_the_order_form = [By.XPATH, "//button[@class ='Button_Button__ra12g Button_Middle__1CSJM']"]
-    yes_button = [By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM' and text()='Да']"]
+    yes_button = [By.XPATH, "//button[@class='Button_Buttonra12g Button_Middle1CSJM' and text()='Да']"]
     order_registration = [By.XPATH, "//div[@class='Order_ModalHeader__3FDaJ']"]
     checkbox_blak = [By.ID, 'black']
     checkbox_grey = [By.ID, 'grey']
     view_the_status = [By.XPATH, "//button[@class='Button_Button__ra12g Button_Middle__1CSJM']"]
     scooter_logo = [By.XPATH, "//img[@src='/assets/scooter.svg']"]
-    yandex_logo = [By.XPATH, "//img[@src='/assets/ya.svg']"]
-    metro_sokoiniki = [By.XPATH, ".//*[text() = 'Сокольники']"]
+    yandex_logo = [By.XPATH,"//img[@src='/assets/ya.svg']"]
+    metro_sokolniki = [By.XPATH, "//div[text()='Сокольники']"]
+    metro_lubyanka = [By.XPATH, "//div[text()='Лубянка']"]
     dvoe_sutok  = [By.XPATH, ".//*[text() = 'Двое суток']"]
-    metro_lybanka = [By.XPATH, ".//*[text() = 'Лубянка']"]
+    metro_lubyanka = [By.XPATH, "//div[text()='Лубянка']"]
     troe_sutok  = [By.XPATH, ".//*[text() = 'Трое суток']"]
-
-
