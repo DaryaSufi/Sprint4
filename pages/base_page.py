@@ -33,3 +33,10 @@ class BasePage:
 
     def is_order_confirmed(self):
         return self.is_element_visible(OrderPageLocators.order_registration)
+    def get_current_url(self):
+        return self.driver.current_url
+
+    def get_tab_and_switch(self):
+        tabs = self.driver.window_handles
+        self.driver.switch_to.window(tabs[1])
+        return tabs

@@ -1,6 +1,5 @@
 import allure
 import pytest
-
 from locators import ImportantQuestionsLocators
 from pages.important_questions_page import ImportantQuestions
 
@@ -20,5 +19,6 @@ class TestImportantQuestions:
     def test_important_questions(self, driver, method_name, expected_locator):
         important_questions = ImportantQuestions(driver)
         important_questions.go_to_site()
+        important_questions.scroll_down()
         getattr(important_questions, method_name)()
         assert important_questions.is_element_visible(expected_locator)
